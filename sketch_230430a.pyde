@@ -32,9 +32,18 @@ def draw():
     player.draw_()
     enemy.draw_()
     enemy.draw_ammo()
+<<<<<<< HEAD
     
     
     
+=======
+    player.draw_ammo()
+    player.move_ammo()
+    
+    
+
+        
+>>>>>>> 52a318c (added bullet movement)
 def keyPressed():
     if keyCode == UP:
         player.position.y -= vel
@@ -44,4 +53,7 @@ def keyPressed():
         player.position.x += vel
     if keyCode == LEFT:
         player.position.x -= vel
+<<<<<<< HEAD
     
+=======
+>>>>>>> 52a318c (added bullet movement)

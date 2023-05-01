@@ -1,5 +1,9 @@
 class Player():
     rot_fac = 3 * PI / 2
+<<<<<<< HEAD
+=======
+    a_sp = 10
+>>>>>>> 52a318c (added bullet movement)
     def __init__(self, p_img, a_img, posx, posy, ammo):
         self.p_img = p_img
         self.a_img = a_img
@@ -23,3 +27,9 @@ class Player():
         image(self.a_img, 0, 0)
         popMatrix()
     
+<<<<<<< HEAD
+=======
+    def move_ammo(self):
+        self.ammopos.x += Player.a_sp
+    
+>>>>>>> 52a318c (added bullet movement)
