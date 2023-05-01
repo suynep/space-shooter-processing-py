@@ -19,12 +19,13 @@ class Player():
         popMatrix()
     
     def draw_ammo(self):
-        pushMatrix()
-        imageMode(CENTER)
-        translate(self.ammopos.x, self.ammopos.y)
-        rotate(Player.rot_fac)
-        image(self.a_img, 0, 0)
-        popMatrix()
+        if self.ammo > 0:
+            pushMatrix()
+            imageMode(CENTER)
+            translate(self.ammopos.x, self.ammopos.y)
+            rotate(Player.rot_fac)
+            image(self.a_img, 0, 0)
+            popMatrix()
     
 
     def move_ammo(self):

@@ -2,7 +2,7 @@
 
 class Enemy():
     rot_fac = PI/2
-    a_sp = 5
+    a_sp = 20
     def __init__(self, p_img, a_img, posx, posy, ammo):
         self.p_img = p_img
         self.a_img = a_img
@@ -19,13 +19,14 @@ class Enemy():
         popMatrix()
         
     def draw_ammo(self):
-        pushMatrix()
-        imageMode(CENTER)
-        translate(self.ammopos.x, self.ammopos.y)
-        rotate(Enemy.rot_fac)
-        image(self.a_img, 0, 0)
-        popMatrix()
-
-        self.ammopos.x -= Enemy.a_sp
+        if self.ammo > 0:
+            pushMatrix()
+            imageMode(CENTER)
+            translate(self.ammopos.x, self.ammopos.y)
+            rotate(Enemy.rot_fac)
+            image(self.a_img, 0, 0)
+            popMatrix()
+            self.ammopos.x -= Enemy.a_sp
+            self.ammo -= 1
     
     
