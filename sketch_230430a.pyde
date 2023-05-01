@@ -8,7 +8,7 @@ e_count = 5
 e_name = [i for i in range(e_count)]
 
 def check_ammo_collision(p, a):
-    if dist(p.position.x, p.position.y, a.ammopos.x, a.ammopos.y) < (p.p_img.width / 2 + a.a_img.width/2): # use height because the image is rotated in the class load
+    if dist(p.position.x - p.p_img.height/2, p.position.y, a.ammopos.x + a.a_img.height/2, a.ammopos.y) < (p.p_img.height/2 + a.a_img.height/2 - 50):
         return True
     
         
@@ -47,7 +47,7 @@ def setup():
     global enemies
     enemies = dict(e)
     
-    
+    print(p_img.width, p_img.height)
     
     
     
@@ -56,7 +56,6 @@ def draw():
     
     player.draw_()
     player.draw_ammo()
-    player.move_ammo()
     
 
     
